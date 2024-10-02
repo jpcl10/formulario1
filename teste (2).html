@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: green;
+        }
+        .header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Formulário Completo</h1>
+</div>
+
+<div class="container mt-5">
+    <form id="myForm">
+
+        <!-- Seção inicial -->
+        <div class="mb-3">
+            <label for="companyName" class="form-label">1 - Nome da empresa</label>
+            <input type="text" class="form-control" id="companyName" placeholder="Digite o nome da empresa">
+        </div>
+
+        <div class="mb-3">
+            <label for="surveyDate" class="form-label">2 - Data do levantamento</label>
+            <input type="date" class="form-control" id="surveyDate">
+        </div>
+
+        <div class="mb-3">
+            <label for="establishmentDetails" class="form-label">3 - Caracterização do estabelecimento</label>
+            <textarea class="form-control" id="establishmentDetails" rows="3" placeholder="Digite os detalhes do estabelecimento"></textarea>
+            <input type="file" class="form-control mt-2" id="establishmentPhotos" multiple>
+        </div>
+
+        <div class="mb-3">
+            <label for="technicianName" class="form-label">4 - Nome do Técnico responsável pelo levantamento</label>
+            <input type="text" class="form-control" id="technicianName" placeholder="Digite o nome do técnico">
+        </div>
+
+        <div class="mb-3">
+            <label for="companySector" class="form-label">5 - Qual setor deseja descrever?</label>
+            <input type="text" class="form-control" id="companySector" placeholder="Descreva o setor">
+        </div>
+
+        <div class="mb-3">
+            <label for="position" class="form-label">6 - Função/Cargo</label>
+            <input type="text" class="form-control" id="position" placeholder="Digite a função ou cargo">
+        </div>
+
+        <div class="mb-3">
+            <label for="employees" class="form-label">8 - Total de funcionários deste setor</label>
+            <input type="number" class="form-control" id="employees" placeholder="Digite o total de funcionários">
+        </div>
+
+        <div class="mb-3">
+            <label for="workHours" class="form-label">9 - Jornada</label>
+            <input type="text" class="form-control" id="workHours" placeholder="Digite a jornada de trabalho">
+        </div>
+
+        <div class="mb-3">
+            <label for="installationType" class="form-label">10 - Qual o tipo de instalação?</label><br>
+            <input type="radio" name="installationType" id="brick" value="Alvenaria metálica"> Alvenaria metálica<br>
+            <input type="radio" name="installationType" id="outdoor" value="Ambiente externo"> Ambiente externo<br>
+            <input type="radio" name="installationType" id="other" value="Outro"> Outro<br>
+        </div>
+
+        <div class="mb-3">
+            <label for="roofType" class="form-label">11 - Qual o tipo de cobertura?</label><br>
+            <input type="radio" name="roofType" id="concrete" value="Laje"> Laje<br>
+            <input type="radio" name="roofType" id="roof" value="Telhado"> Telhado<br>
+            <input type="radio" name="roofType" id="otherRoof" value="Outro"> Outro<br>
+        </div>
+
+        <div class="mb-3">
+            <label for="ventilation" class="form-label">12 - Qual o tipo de ventilação no local?</label><br>
+            <input type="radio" name="ventilation" id="naturalVent" value="Natural"> Natural<br>
+            <input type="radio" name="ventilation" id="artificialVent" value="Artificial"> Artificial<br>
+        </div>
+
+        <div class="mb-3">
+            <label for="lighting" class="form-label">13 - Qual o tipo de iluminação no local?</label><br>
+            <input type="radio" name="lighting" id="naturalLight" value="Natural"> Natural<br>
+            <input type="radio" name="lighting" id="artificialLight" value="Artificial"> Artificial<br>
+        </div>
+
+        <!-- Caracterização do Processo -->
+        <h3>Caracterização do Processo</h3>
+        <div class="mb-3">
+            <label for="processDescription" class="form-label">15 - Caracterização do processo (adicione fotos se necessário)</label>
+            <textarea class="form-control" id="processDescription" rows="3" placeholder="Descreva o processo"></textarea>
+            <input type="file" class="form-control mt-2" id="processPhotos" multiple>
+        </div>
+
+        <div class="mb-3">
+            <label for="engineeringControl" class="form-label">Controle de Engenharia/EPC/Medida Administrativa</label>
+            <textarea class="form-control" id="engineeringControl" rows="2" placeholder="Descreva as medidas"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="epiCa" class="form-label">CA dos EPI</label>
+            <textarea class="form-control" id="epiCa" rows="2" placeholder="Descreva o CA dos EPIs"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="lux" class="form-label">Lux</label>
+            <textarea class="form-control" id="lux" rows="2" placeholder="Digite o valor de Lux"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="noise" class="form-label">Ruído</label>
+            <textarea class="form-control" id="noise" rows="2" placeholder="Digite o valor do Ruído"></textarea>
+        </div>
+
+        <!-- NR18 – Condições e Meio Ambiente de Trabalho na Indústria da Construção -->
+        <h3>NR18 – Condições e Meio Ambiente de Trabalho na Indústria da Construção</h3>
+        <div class="mb-3">
+            <label>1- Tem projeto da área de vivência?</label><br>
+            <input type="radio" name="areaVivencia" value="SIM"> SIM<br>
+            <input type="radio" name="areaVivencia" value="NÃO"> NÃO<br>
+            <input type="radio" name="areaVivencia" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Tem projeto da instalação elétrica temporária?</label><br>
+            <input type="radio" name="instalacaoEletrica" value="SIM"> SIM<br>
+            <input type="radio" name="instalacaoEletrica" value="NÃO"> NÃO<br>
+            <input type="radio" name="instalacaoEletrica" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>3- Tem projeto da proteção individual contra queda?</label><br>
+            <input type="radio" name="protecaoQueda" value="SIM"> SIM<br>
+            <input type="radio" name="protecaoQueda" value="NÃO"> NÃO<br>
+            <input type="radio" name="protecaoQueda" value="NA"> NA<br>
+        </div>
+
+        <!-- NR20 - Posto de combustível -->
+        <h3>Posto de combustível NR-20</h3>
+
+        <div class="mb-3">
+            <label>1- Plano de manutenção</label><br>
+            <input type="radio" name="planoManutencao" value="SIM"> SIM<br>
+            <input type="radio" name="planoManutencao" value="NÃO"> NÃO<br>
+            <input type="radio" name="planoManutencao" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Possui treinamento de combate a incêndio?</label><br>
+            <input type="radio" name="treinamentoIncendio" value="SIM"> SIM<br>
+            <input type="radio" name="treinamentoIncendio" value="NÃO"> NÃO<br>
+            <input type="radio" name="treinamentoIncendio" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>3- Possui prontuário da instalação?</label><br>
+            <input type="radio" name="prontuario" value="SIM"> SIM<br>
+            <input type="radio" name="prontuario" value="NÃO"> NÃO<br>
+            <input type="radio" name="prontuario" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>4- Possui treinamento da NR 20?</label><br>
+            <input type="radio" name="treinamentoNR20" value="SIM"> SIM<br>
+            <input type="radio" name="treinamentoNR20" value="NÃO"> NÃO<br>
+            <input type="radio" name="treinamentoNR20" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>5- Possui SPDA?</label><br>
+            <input type="radio" name="spda" value="SIM"> SIM<br>
+            <input type="radio" name="spda" value="NÃO"> NÃO<br>
+            <input type="radio" name="spda" value="NA"> NA<br>
+        </div>
+
+        <!-- NR23 - Proteção contra incêndios -->
+        <h3>NR23 – Proteção contra incêndios</h3>
+
+        <div class="mb-3">
+            <label>1- Adotar medidas conforme a norma?</label><br>
+            <input type="radio" name="adotarMedidas" value="SIM"> SIM<br>
+            <input type="radio" name="adotarMedidas" value="NÃO"> NÃO<br>
+            <input type="radio" name="adotarMedidas" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Os trabalhadores possuem orientação?</label><br>
+            <input type="radio" name="orientacaoTrabalhadores" value="SIM"> SIM<br>
+            <input type="radio" name="orientacaoTrabalhadores" value="NÃO"> NÃO<br>
+            <input type="radio" name="orientacaoTrabalhadores" value="NA"> NA<br>
+        </div>
+
+        <!-- NR24 - Condições sanitárias -->
+        <h3>NR24 – Condições sanitárias</h3>
+
+        <div class="mb-3">
+            <label>1- Possui água potável filtrada?</label><br>
+            <input type="radio" name="aguaPotavel" value="SIM"> SIM<br>
+            <input type="radio" name="aguaPotavel" value="NÃO"> NÃO<br>
+            <input type="radio" name="aguaPotavel" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Possui papel toalha, sabonete líquido e lixeira com tampa?</label><br>
+            <input type="radio" name="papelToalha" value="SIM"> SIM<br>
+            <input type="radio" name="papelToalha" value="NÃO"> NÃO<br>
+            <input type="radio" name="papelToalha" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>3- Os banheiros estão em bom estado de limpeza e conservação?</label><br>
+            <input type="radio" name="banheiros" value="SIM"> SIM<br>
+            <input type="radio" name="banheiros" value="NÃO"> NÃO<br>
+            <input type="radio" name="banheiros" value="NA"> NA<br>
+        </div>
+
+        <!-- NR33 - Espaços confinados -->
+        <h3>NR33 – Espaços confinados</h3>
+
+        <div class="mb-3">
+            <label>1- Tem procedimento de trabalho e plano de emergência?</label><br>
+            <input type="radio" name="procedimentoTrabalho" value="SIM"> SIM<br>
+            <input type="radio" name="procedimentoTrabalho" value="NÃO"> NÃO<br>
+            <input type="radio" name="procedimentoTrabalho" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Tem responsável técnico?</label><br>
+            <input type="radio" name="responsavelTecnico" value="SIM"> SIM<br>
+            <input type="radio" name="responsavelTecnico" value="NÃO"> NÃO<br>
+            <input type="radio" name="responsavelTecnico" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>3- Tem cadastro dos espaços?</label><br>
+            <input type="radio" name="cadastroEspacos" value="SIM"> SIM<br>
+            <input type="radio" name="cadastroEspacos" value="NÃO"> NÃO<br>
+            <input type="radio" name="cadastroEspacos" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>4- Tem capacitação? Permissão de entrada?</label><br>
+            <input type="radio" name="capacitacaoPermissao" value="SIM"> SIM<br>
+            <input type="radio" name="capacitacaoPermissao" value="NÃO"> NÃO<br>
+            <input type="radio" name="capacitacaoPermissao" value="NA"> NA<br>
+        </div>
+
+        <!-- NR35 - Trabalho em altura -->
+        <h3>NR35 – Trabalho em altura</h3>
+
+        <div class="mb-3">
+            <label>1- Tem projeto de porte coletivo contra queda?</label><br>
+            <input type="radio" name="projetoQueda" value="SIM"> SIM<br>
+            <input type="radio" name="projetoQueda" value="NÃO"> NÃO<br>
+            <input type="radio" name="projetoQueda" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>2- Tem treinamento?</label><br>
+            <input type="radio" name="treinamentoAltura" value="SIM"> SIM<br>
+            <input type="radio" name="treinamentoAltura" value="NÃO"> NÃO<br>
+            <input type="radio" name="treinamentoAltura" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>3- Tem análise de risco e procedimento de trabalho?</label><br>
+            <input type="radio" name="analiseRisco" value="SIM"> SIM<br>
+            <input type="radio" name="analiseRisco" value="NÃO"> NÃO<br>
+            <input type="radio" name="analiseRisco" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>4- Permissão e solicitação de trabalho?</label><br>
+            <input type="radio" name="permissaoTrabalho" value="SIM"> SIM<br>
+            <input type="radio" name="permissaoTrabalho" value="NÃO"> NÃO<br>
+            <input type="radio" name="permissaoTrabalho" value="NA"> NA<br>
+        </div>
+
+        <div class="mb-3">
+            <label>5- Possui plano de emergência?</label><br>
+            <input type="radio" name="planoEmergencia" value="SIM"> SIM<br>
+            <input type="radio" name="planoEmergencia" value="NÃO"> NÃO<br>
+            <input type="radio" name="planoEmergencia" value="NA"> NA<br>
+        </div>
+
+        <!-- Descrição da função -->
+        <h3>Descrição da Função</h3>
+        <div class="mb-3">
+            <label for="funcaoDescricao" class="form-label">Descrição da função (descreva de forma específica)</label>
+            <textarea class="form-control" id="funcaoDescricao" rows="3" placeholder="Descreva a função"></textarea>
+        </div>
+
+        <!-- Produtos utilizados (Caixa de texto e upload) -->
+        <div class="mb-3">
+            <label for="produtosUtilizadosTexto" class="form-label">Informar produtos utilizados (Anexar como FISPQ)</label>
+            <textarea class="form-control" id="produtosUtilizadosTexto" rows="2" placeholder="Descreva os produtos utilizados"></textarea>
+            <input type="file" class="form-control mt-2" id="produtosUtilizadosArquivo" multiple>
+        </div>
+
+        <!-- Máquinas operadas (Caixa de texto e upload) -->
+        <div class="mb-3">
+            <label for="maquinasOperadasTexto" class="form-label">Informar máquinas operadas (Anexar fotos/vídeos)</label>
+            <textarea class="form-control" id="maquinasOperadasTexto" rows="2" placeholder="Descreva as máquinas operadas"></textarea>
+            <input type="file" class="form-control mt-2" id="maquinasOperadasArquivo" multiple>
+        </div>
+
+        <!-- Caixas interligadas -->
+        <h3>Perigo ou Fator de risco</h3>
+        <div class="mb-3">
+            <label for="perigoRisco" class="form-label">Perigo ou Fator de risco</label>
+            <textarea class="form-control" id="perigoRisco" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="fontesCircunstancias" class="form-label">Fontes e circunstâncias</label>
+            <textarea class="form-control" id="fontesCircunstancias" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="controlesExistentes" class="form-label">Controles existentes</label>
+            <textarea class="form-control" id="controlesExistentes" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="exposicao" class="form-label">T. Exposição</label>
+            <textarea class="form-control" id="exposicao" rows="3"></textarea>
+        </div>
+
+        <!-- Trabalhadores ouvidos -->
+        <div class="mb-3">
+            <label for="trabalhadoresOuvidos" class="form-label">Trabalhadores ouvidos</label>
+            <textarea class="form-control" id="trabalhadoresOuvidos" rows="3"></textarea>
+        </div>
+
+        <!-- Botão de envio -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+    <!-- Local onde o relatório será exibido -->
+    <div id="relatorio" class="mt-5"></div>
+</div>
+
+<!-- Adicionando o script -->
+<script>
+    document.getElementById("myForm").onsubmit = function(event) {
+        event.preventDefault();
+        var relatorio = "";
+
+        // Captura os valores dos campos
+        var nomeEmpresa = document.getElementById("companyName").value;
+        var dataLevantamento = document.getElementById("surveyDate").value;
+        var detalhesEstabelecimento = document.getElementById("establishmentDetails").value;
+        var nomeTecnico = document.getElementById("technicianName").value;
+        var setorEmpresa = document.getElementById("companySector").value;
+        var funcaoCargo = document.getElementById("position").value;
+        var totalFuncionarios = document.getElementById("employees").value;
+        var jornada = document.getElementById("workHours").value;
+
+        // Captura os valores dos botões de rádio
+        var tipoInstalacao = document.querySelector('input[name="installationType"]:checked') ? document.querySelector('input[name="installationType"]:checked').value : "Não especificado";
+        var tipoCobertura = document.querySelector('input[name="roofType"]:checked') ? document.querySelector('input[name="roofType"]:checked').value : "Não especificado";
+        var tipoVentilacao = document.querySelector('input[name="ventilation"]:checked') ? document.querySelector('input[name="ventilation"]:checked').value : "Não especificado";
+        var tipoIluminacao = document.querySelector('input[name="lighting"]:checked') ? document.querySelector('input[name="lighting"]:checked').value : "Não especificado";
+
+        var descricaoProcesso = document.getElementById("processDescription").value;
+        var controleEngenharia = document.getElementById("engineeringControl").value;
+        var caEpi = document.getElementById("epiCa").value;
+        var lux = document.getElementById("lux").value;
+        var ruido = document.getElementById("noise").value;
+
+        // Captura os valores adicionais para as normas
+        var areaVivencia = document.querySelector('input[name="areaVivencia"]:checked') ? document.querySelector('input[name="areaVivencia"]:checked').value : "Não especificado";
+        var instalacaoEletrica = document.querySelector('input[name="instalacaoEletrica"]:checked') ? document.querySelector('input[name="instalacaoEletrica"]:checked').value : "Não especificado";
+        var protecaoQueda = document.querySelector('input[name="protecaoQueda"]:checked') ? document.querySelector('input[name="protecaoQueda"]:checked').value : "Não especificado";
+        var planoManutencao = document.querySelector('input[name="planoManutencao"]:checked') ? document.querySelector('input[name="planoManutencao"]:checked').value : "Não especificado";
+        var treinamentoIncendio = document.querySelector('input[name="treinamentoIncendio"]:checked') ? document.querySelector('input[name="treinamentoIncendio"]:checked').value : "Não especificado";
+        var prontuario = document.querySelector('input[name="prontuario"]:checked') ? document.querySelector('input[name="prontuario"]:checked').value : "Não especificado";
+        var treinamentoNR20 = document.querySelector('input[name="treinamentoNR20"]:checked') ? document.querySelector('input[name="treinamentoNR20"]:checked').value : "Não especificado";
+        var spda = document.querySelector('input[name="spda"]:checked') ? document.querySelector('input[name="spda"]:checked').value : "Não especificado";
+        var adotarMedidas = document.querySelector('input[name="adotarMedidas"]:checked') ? document.querySelector('input[name="adotarMedidas"]:checked').value : "Não especificado";
+        var orientacaoTrabalhadores = document.querySelector('input[name="orientacaoTrabalhadores"]:checked') ? document.querySelector('input[name="orientacaoTrabalhadores"]:checked').value : "Não especificado";
+        var aguaPotavel = document.querySelector('input[name="aguaPotavel"]:checked') ? document.querySelector('input[name="aguaPotavel"]:checked').value : "Não especificado";
+        var papelToalha = document.querySelector('input[name="papelToalha"]:checked') ? document.querySelector('input[name="papelToalha"]:checked').value : "Não especificado";
+        var banheiros = document.querySelector('input[name="banheiros"]:checked') ? document.querySelector('input[name="banheiros"]:checked').value : "Não especificado";
+        var procedimentoTrabalho = document.querySelector('input[name="procedimentoTrabalho"]:checked') ? document.querySelector('input[name="procedimentoTrabalho"]:checked').value : "Não especificado";
+        var responsavelTecnico = document.querySelector('input[name="responsavelTecnico"]:checked') ? document.querySelector('input[name="responsavelTecnico"]:checked').value : "Não especificado";
+        var cadastroEspacos = document.querySelector('input[name="cadastroEspacos"]:checked') ? document.querySelector('input[name="cadastroEspacos"]:checked').value : "Não especificado";
+        var capacitacaoPermissao = document.querySelector('input[name="capacitacaoPermissao"]:checked') ? document.querySelector('input[name="capacitacaoPermissao"]:checked').value : "Não especificado";
+        var projetoQueda = document.querySelector('input[name="projetoQueda"]:checked') ? document.querySelector('input[name="projetoQueda"]:checked').value : "Não especificado";
+        var treinamentoAltura = document.querySelector('input[name="treinamentoAltura"]:checked') ? document.querySelector('input[name="treinamentoAltura"]:checked').value : "Não especificado";
+        var analiseRisco = document.querySelector('input[name="analiseRisco"]:checked') ? document.querySelector('input[name="analiseRisco"]:checked').value : "Não especificado";
+        var permissaoTrabalho = document.querySelector('input[name="permissaoTrabalho"]:checked') ? document.querySelector('input[name="permissaoTrabalho"]:checked').value : "Não especificado";
+        var planoEmergencia = document.querySelector('input[name="planoEmergencia"]:checked') ? document.querySelector('input[name="planoEmergencia"]:checked').value : "Não especificado";
+
+        var funcaoDescricao = document.getElementById("funcaoDescricao").value;
+        var produtosUtilizadosTexto = document.getElementById("produtosUtilizadosTexto").value;
+        var maquinasOperadasTexto = document.getElementById("maquinasOperadasTexto").value;
+        var perigoRisco = document.getElementById("perigoRisco").value;
+        var fontesCircunstancias = document.getElementById("fontesCircunstancias").value;
+        var controlesExistentes = document.getElementById("controlesExistentes").value;
+        var exposicao = document.getElementById("exposicao").value;
+        var trabalhadoresOuvidos = document.getElementById("trabalhadoresOuvidos").value;
+
+        // Monta o relatório com os dados
+        relatorio += "<h2>Relatório do Formulário</h2>";
+        relatorio += "<strong>Nome da empresa:</strong> " + nomeEmpresa + "<br>";
+        relatorio += "<strong>Data do levantamento:</strong> " + dataLevantamento + "<br>";
+        relatorio += "<strong>Caracterização do estabelecimento:</strong> " + detalhesEstabelecimento + "<br>";
+        relatorio += "<strong>Nome do Técnico responsável:</strong> " + nomeTecnico + "<br>";
+        relatorio += "<strong>Setor descrito:</strong> " + setorEmpresa + "<br>";
+        relatorio += "<strong>Função/Cargo:</strong> " + funcaoCargo + "<br>";
+        relatorio += "<strong>Total de funcionários:</strong> " + totalFuncionarios + "<br>";
+        relatorio += "<strong>Jornada:</strong> " + jornada + "<br>";
+
+        relatorio += "<h3>Instalação</h3>";
+        relatorio += "<strong>Tipo de instalação:</strong> " + tipoInstalacao + "<br>";
+        relatorio += "<strong>Tipo de cobertura:</strong> " + tipoCobertura + "<br>";
+        relatorio += "<strong>Tipo de ventilação:</strong> " + tipoVentilacao + "<br>";
+        relatorio += "<strong>Tipo de iluminação:</strong> " + tipoIluminacao + "<br>";
+
+        relatorio += "<h3>Caracterização do Processo</h3>";
+        relatorio += "<strong>Descrição do processo:</strong> " + descricaoProcesso + "<br>";
+        relatorio += "<strong>Controle de Engenharia/EPC/Medida Administrativa:</strong> " + controleEngenharia + "<br>";
+        relatorio += "<strong>CA dos EPI:</strong> " + caEpi + "<br>";
+        relatorio += "<strong>Lux:</strong> " + lux + "<br>";
+        relatorio += "<strong>Ruído:</strong> " + ruido + "<br>";
+
+        relatorio += "<h3>NR18 – Condições e Meio Ambiente de Trabalho na Indústria da Construção</h3>";
+        relatorio += "<strong>Projeto da área de vivência:</strong> " + areaVivencia + "<br>";
+        relatorio += "<strong>Instalação elétrica temporária:</strong> " + instalacaoEletrica + "<br>";
+        relatorio += "<strong>Proteção individual contra queda:</strong> " + protecaoQueda + "<br>";
+
+        relatorio += "<h3>NR20 – Posto de combustível</h3>";
+        relatorio += "<strong>Plano de manutenção:</strong> " + planoManutencao + "<br>";
+        relatorio += "<strong>Treinamento de combate a incêndio:</strong> " + treinamentoIncendio + "<br>";
+        relatorio += "<strong>Prontuário da instalação:</strong> " + prontuario + "<br>";
+        relatorio += "<strong>Treinamento NR 20:</strong> " + treinamentoNR20 + "<br>";
+        relatorio += "<strong>SPDA:</strong> " + spda + "<br>";
+
+        relatorio += "<h3>NR23 – Proteção contra incêndios</h3>";
+        relatorio += "<strong>Adotar medidas conforme a norma:</strong> " + adotarMedidas + "<br>";
+        relatorio += "<strong>Trabalhadores possuem orientação:</strong> " + orientacaoTrabalhadores + "<br>";
+
+        relatorio += "<h3>NR24 – Condições sanitárias</h3>";
+        relatorio += "<strong>Água potável filtrada:</strong> " + aguaPotavel + "<br>";
+        relatorio += "<strong>Papel toalha, sabonete líquido e lixeira:</strong> " + papelToalha + "<br>";
+        relatorio += "<strong>Banheiros em bom estado:</strong> " + banheiros + "<br>";
+
+        relatorio += "<h3>NR33 – Espaços confinados</h3>";
+        relatorio += "<strong>Procedimento de trabalho e plano de emergência:</strong> " + procedimentoTrabalho + "<br>";
+        relatorio += "<strong>Responsável técnico:</strong> " + responsavelTecnico + "<br>";
+        relatorio += "<strong>Cadastro dos espaços:</strong> " + cadastroEspacos + "<br>";
+        relatorio += "<strong>Capacitação/Permissão de entrada:</strong> " + capacitacaoPermissao + "<br>";
+
+        relatorio += "<h3>NR35 – Trabalho em altura</h3>";
+        relatorio += "<strong>Projeto de porte coletivo contra queda:</strong> " + projetoQueda + "<br>";
+        relatorio += "<strong>Treinamento:</strong> " + treinamentoAltura + "<br>";
+        relatorio += "<strong>Análise de risco e procedimento de trabalho:</strong> " + analiseRisco + "<br>";
+        relatorio += "<strong>Permissão e solicitação de trabalho:</strong> " + permissaoTrabalho + "<br>";
+        relatorio += "<strong>Plano de emergência:</strong> " + planoEmergencia + "<br>";
+
+        relatorio += "<h3>Outras informações</h3>";
+        relatorio += "<strong>Descrição da função:</strong> " + funcaoDescricao + "<br>";
+        relatorio += "<strong>Produtos utilizados:</strong> " + produtosUtilizadosTexto + "<br>";
+        relatorio += "<strong>Máquinas operadas:</strong> " + maquinasOperadasTexto + "<br>";
+        relatorio += "<strong>Perigo ou fator de risco:</strong> " + perigoRisco + "<br>";
+        relatorio += "<strong>Fontes e circunstâncias:</strong> " + fontesCircunstancias + "<br>";
+        relatorio += "<strong>Controles existentes:</strong> " + controlesExistentes + "<br>";
+        relatorio += "<strong>T. Exposição:</strong> " + exposicao + "<br>";
+        relatorio += "<strong>Trabalhadores ouvidos:</strong> " + trabalhadoresOuvidos + "<br>";
+
+        // Exibe o relatório
+        document.getElementById("relatorio").innerHTML = relatorio;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

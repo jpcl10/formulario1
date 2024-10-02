@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Completo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: green;
+        }
+        .header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    <!-- Adicionando a biblioteca jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+    <h1>Formulário Completo</h1>
+</div>
+
+<div class="container mt-5">
+    <form id="myForm">
+
+        <!-- Seção inicial -->
+        <div class="mb-3">
+            <label for="companyName" class="form-label">1 - Nome da empresa</label>
+            <input type="text" class="form-control" id="companyName" placeholder="Digite o nome da empresa">
+        </div>
+
+        <div class="mb-3">
+            <label for="surveyDate" class="form-label">2 - Data do levantamento</label>
+            <input type="date" class="form-control" id="surveyDate">
+        </div>
+
+        <div class="mb-3">
+            <label for="establishmentDetails" class="form-label">3 - Caracterização do estabelecimento</label>
+            <textarea class="form-control" id="establishmentDetails" rows="3" placeholder="Digite os detalhes do estabelecimento"></textarea>
+            <input type="file" class="form-control mt-2" id="establishmentPhotos" multiple>
+        </div>
+
+        <div class="mb-3">
+            <label for="technicianName" class="form-label">4 - Nome do Técnico responsável pelo levantamento</label>
+            <input type="text" class="form-control" id="technicianName" placeholder="Digite o nome do técnico">
+        </div>
+
+        <!-- Seção Setor -->
+        <div id="sectorSection" class="mb-3">
+            <h3>Setor</h3>
+            <div class="sector-group">
+                <div class="mb-3">
+                    <label for="companySector" class="form-label">5 - Qual setor deseja descrever?</label>
+                    <input type="text" class="form-control" name="companySector" placeholder="Descreva o setor">
+                </div>
+
+                <div class="mb-3">
+                    <label for="processo" class="form-label">Processo</label>
+                    <textarea class="form-control" name="processo" rows="2" placeholder="Descreva o processo"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="medidasEngenharia" class="form-label">Medidas de Engenharia</label>
+                    <textarea class="form-control" name="medidasEngenharia" rows="2" placeholder="Descreva as medidas de engenharia"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão para adicionar novo setor -->
+        <button type="button" class="btn btn-primary mt-3" id="addSectorBtn">Adicionar Novo Setor</button>
+
+        <!-- Seção Função -->
+        <div id="functionSection" class="mt-4">
+            <h3>Função</h3>
+            <div class="function-group">
+                <div class="mb-3">
+                    <label for="funcaoDescricao" class="form-label">Descrição da função (descreva de forma específica)</label>
+                    <textarea class="form-control" name="funcaoDescricao" rows="3" placeholder="Descreva a função"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="numeroFuncionarios" class="form-label">Número de funcionários</label>
+                    <input type="number" class="form-control" name="numeroFuncionarios" placeholder="Digite o número de funcionários">
+                </div>
+
+                <div class="mb-3">
+                    <label for="jornada" class="form-label">Jornada</label>
+                    <input type="text" class="form-control" name="jornada" placeholder="Digite a jornada de trabalho">
+                </div>
+
+                <div class="mb-3">
+                    <label for="produtosUtilizados" class="form-label">Informe produtos utilizados (Anexar como FISPQ)</label>
+                    <textarea class="form-control" name="produtosUtilizados" rows="2" placeholder="Descreva os produtos utilizados"></textarea>
+                    <input type="file" class="form-control mt-2" name="produtosUtilizadosArquivo" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <label for="maquinasOperadas" class="form-label">Informe máquinas operadas (Anexar fotos/vídeos)</label>
+                    <textarea class="form-control" name="maquinasOperadas" rows="2" placeholder="Descreva as máquinas operadas"></textarea>
+                    <input type="file" class="form-control mt-2" name="maquinasOperadasArquivo" multiple>
+                </div>
+
+                <div class="mb-3">
+                    <label for="epiCa" class="form-label">CA dos EPI</label>
+                    <textarea class="form-control" name="epiCa" rows="2" placeholder="Descreva o CA dos EPIs"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="perigoRisco" class="form-label">Perigo ou Fator de risco</label>
+                    <textarea class="form-control" name="perigoRisco" rows="3" placeholder="Descreva o perigo ou fator de risco"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fontesCircunstancias" class="form-label">Fontes e circunstâncias</label>
+                    <textarea class="form-control" name="fontesCircunstancias" rows="2" placeholder="Descreva as fontes e circunstâncias"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="controlesExistentes" class="form-label">Controles existentes</label>
+                    <textarea class="form-control" name="controlesExistentes" rows="2" placeholder="Descreva os controles existentes"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exposicao" class="form-label">T. Exposição</label>
+                    <textarea class="form-control" name="exposicao" rows="2" placeholder="Descreva o tempo de exposição"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trabalhadoresOuvidos" class="form-label">Trabalhadores ouvidos</label>
+                    <textarea class="form-control" name="trabalhadoresOuvidos" rows="3" placeholder="Informe os trabalhadores ouvidos"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão para adicionar nova função -->
+        <button type="button" class="btn btn-primary mt-3" id="addFunctionBtn">Adicionar Função</button>
+
+        <!-- Botão de envio -->
+        <button type="submit" class="btn btn-success mt-3">Enviar</button>
+    </form>
+
+    <!-- Botão para gerar PDF -->
+    <button id="generatePdf" class="btn btn-secondary mt-3" style="display: none;">Gerar PDF</button>
+
+    <!-- Local onde o relatório será exibido -->
+    <div id="relatorio" class="mt-5"></div>
+</div>
+
+<script>
+    // Função para adicionar nova seção de setor
+    document.getElementById('addSectorBtn').addEventListener('click', function() {
+        const sectorSection = document.getElementById('sectorSection');
+        const newSectorGroup = document.createElement('div');
+        newSectorGroup.classList.add('sector-group', 'mt-4');
+
+        newSectorGroup.innerHTML = `
+            <h3>Novo Setor</h3>
+            <div class="mb-3">
+                <label for="companySector" class="form-label">Setor</label>
+                <input type="text" class="form-control" name="companySector" placeholder="Descreva o setor">
+            </div>
+
+            <div class="mb-3">
+                <label for="processo" class="form-label">Processo</label>
+                <textarea class="form-control" name="processo" rows="2" placeholder="Descreva o processo"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="medidasEngenharia" class="form-label">Medidas de Engenharia</label>
+                <textarea class="form-control" name="medidasEngenharia" rows="2" placeholder="Descreva as medidas de engenharia"></textarea>
+            </div>
+        `;
+
+        sectorSection.appendChild(newSectorGroup);
+    });
+
+    // Função de envio para capturar todos os dados e gerar relatório completo
+    document.getElementById("myForm").onsubmit = function(event) {
+        event.preventDefault();
+        var relatorio = "<h2>Relatório Completo</h2>";
+
+        // Captura dados gerais
+        relatorio += `<strong>Nome da empresa:</strong> ${document.getElementById("companyName").value}<br>`;
+        relatorio += `<strong>Data do levantamento:</strong> ${document.getElementById("surveyDate").value}<br>`;
+        relatorio += `<strong>Caracterização do estabelecimento:</strong> ${document.getElementById("establishmentDetails").value}<br>`;
+        relatorio += `<strong>Nome do técnico responsável:</strong> ${document.getElementById("technicianName").value}<br>`;
+
+        // Captura todas as seções de setor
+        const sectorGroups = document.querySelectorAll('.sector-group');
+        sectorGroups.forEach(function(group, index) {
+            relatorio += `<h3>Setor ${index + 1}</h3>`;
+            relatorio += `<strong>Setor:</strong> ${group.querySelector('input[name="companySector"]').value}<br>`;
+            relatorio += `<strong>Processo:</strong> ${group.querySelector('textarea[name="processo"]').value}<br>`;
+            relatorio += `<strong>Medidas de Engenharia:</strong> ${group.querySelector('textarea[name="medidasEngenharia"]').value}<br><br>`;
+        });
+
+        // Captura todas as seções de função
+        const functionGroups = document.querySelectorAll('.function-group');
+        functionGroups.forEach(function(group, index) {
+            relatorio += `<h3>Função ${index + 1}</h3>`;
+            relatorio += `<strong>Descrição da função:</strong> ${group.querySelector('textarea[name="funcaoDescricao"]').value}<br>`;
+            relatorio += `<strong>Número de funcionários:</strong> ${group.querySelector('input[name="numeroFuncionarios"]').value}<br>`;
+            relatorio += `<strong>Jornada:</strong> ${group.querySelector('input[name="jornada"]').value}<br>`;
+            relatorio += `<strong>Máquinas operadas:</strong> ${group.querySelector('textarea[name="maquinasOperadas"]').value}<br>`;
+            relatorio += `<strong>Produtos utilizados:</strong> ${group.querySelector('textarea[name="produtosUtilizados"]').value}<br>`;
+            relatorio += `<strong>CA dos EPI:</strong> ${group.querySelector('textarea[name="epiCa"]').value}<br>`;
+            relatorio += `<strong>Perigo ou Fator de risco:</strong> ${group.querySelector('textarea[name="perigoRisco"]').value}<br>`;
+            relatorio += `<strong>Fontes e circunstâncias:</strong> ${group.querySelector('textarea[name="fontesCircunstancias"]').value}<br>`;
+            relatorio += `<strong>Controles existentes:</strong> ${group.querySelector('textarea[name="controlesExistentes"]').value}<br>`;
+            relatorio += `<strong>T. Exposição:</strong> ${group.querySelector('textarea[name="exposicao"]').value}<br>`;
+            relatorio += `<strong>Trabalhadores ouvidos:</strong> ${group.querySelector('textarea[name="trabalhadoresOuvidos"]').value}<br><br>`;
+        });
+
+        // Exibe o relatório
+        document.getElementById("relatorio").innerHTML = relatorio;
+
+        // Exibe o botão para gerar PDF
+        document.getElementById("generatePdf").style.display = "block";
+    }
+
+    // Função para gerar o PDF
+    document.getElementById("generatePdf").addEventListener("click", function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Captura o conteúdo do relatório
+        const relatorioConteudo = document.getElementById("relatorio").innerHTML;
+
+        // Adiciona o conteúdo ao PDF
+        doc.text(relatorioConteudo, 10, 10);
+        
+        // Salva o PDF
+        doc.save("relatorio.pdf");
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
